@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protech Recovery 24/7 - West Yorkshire Vehicle Recovery & Transport Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'protech-red': '#DC2626',
+                        'protech-dark': '#1F2937',
+                        'protech-gray': '#374151'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Sticky Header -->
+    <header class="bg-white shadow-lg fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="./images/logo.jpg" alt="Protech Recovery 24/7 Logo" class="h-12 w-auto mr-3">
+                    <div class="lg:hidden">
+                        <h1 class="text-xl font-bold text-protech-red">PROTECH RECOVERY 24/7</h1>
+                        <p class="text-xs text-protech-gray">West Yorkshire Based</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="tel:07979537525" class="flex items-center text-lg font-bold text-protech-red hover:text-red-400 transition">
+                        <i class="fas fa-phone mr-2"></i>
+                        <span class="hidden sm:inline">07979 537525</span>
+                        <span class="sm:hidden">Call</span>
+                    </a>
+                    <!-- Hamburger menu for mobile/tablet only -->
+                    <button id="menuToggle" class="lg:hidden text-protech-dark hover:text-protech-red transition p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Desktop Navigation Bar -->
+        <nav class="hidden lg:block bg-protech-red text-white">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-center space-x-8 py-3">
+                    <a href="#home" class="hover:text-gray-200 transition px-3 py-2 rounded">Home</a>
+                    <a href="#about" class="hover:text-gray-200 transition px-3 py-2 rounded">About Us</a>
+                    <a href="#services" class="hover:text-gray-200 transition px-3 py-2 rounded">Services</a>
+                    <a href="#testimonials" class="hover:text-gray-200 transition px-3 py-2 rounded">Testimonials</a>
+                    <a href="#quote" class="hover:text-gray-200 transition px-3 py-2 rounded">Get Quote</a>
+                    <a href="#contact" class="hover:text-gray-200 transition px-3 py-2 rounded">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Sidebar Menu -->
+    <div id="sidebar" class="lg:hidden fixed top-0 right-0 h-full w-80 bg-protech-dark text-white transform translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-xl font-bold text-protech-red">MENU</h2>
+                <button id="closeSidebar" class="text-white hover:text-protech-red transition">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="space-y-4">
+                <a href="#home" class="block py-3 px-4 hover:bg-protech-red rounded transition sidebar-link">
+                    <i class="fas fa-home mr-3"></i>Home
+                </a>
+                <a href="#about" class="block py-3 px-4 hover:bg-protech-red rounded transition sidebar-link">
+                    <i class="fas fa-info-circle mr-3"></i>About Us
+                </a>
+                <a href="#services" class="block py-3 px-4 hover:bg-protech-red rounded transition sidebar-link">
+                    <i class="fas fa-wrench mr-3"></i>Services
+                </a>
+                <a href="#testimonials" class="block py-3 px-4 hover:bg-protech-red rounded transition sidebar-link">
+                    <i class="fas fa-star mr-3"></i>Testimonials
+                </a>
+                <a href="#quote" class="block py-3 px-4 hover:bg-protech-red rounded transition sidebar-link">
+                    <i class="fas fa-calculator mr-3"></i>Get Quote
+                </a>
+                <a href="#contact" class="block py-3 px-4 hover:bg-protech-red rounded transition sidebar-link">
+                    <i class="fas fa-phone mr-3"></i>Contact
+                </a>
+            </nav>
+            <div class="mt-8 pt-8 border-t border-gray-600">
+                <div class="text-center">
+                    <p class="text-sm text-gray-300 mb-4">Emergency 24/7 Service</p>
+                    <a href="tel:07979537525" class="bg-protech-red hover:bg-red-700 text-white px-6 py-3 rounded-lg font-bold transition block">
+                        <i class="fas fa-phone mr-2"></i>
+                        07979 537525
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div id="sidebarOverlay" class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+    <!-- Hero Section with Background Image -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center mt-24">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="./images/hero-bg.jpg" 
+                 alt="Vehicle Breakdown Emergency" 
+                 class="w-full h-full object-cover">
+            <!-- Black Overlay for text visibility -->
+            <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="relative z-10 container mx-auto px-4 text-center text-white">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">
+                24/7 VEHICLE RECOVERY
+                <span class="block text-protech-red">& TRANSPORT SERVICES</span>
+            </h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                Professional vehicle recovery, breakdown assistance, and transport services across West Yorkshire and beyond
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6 mb-8">
+                <div class="bg-protech-red px-6 py-3 rounded-lg font-bold text-lg">
+                    CASH IS KING - 20% VAT ADDED ON BANK TRANSFER
+                </div>
+                <div class="bg-white text-protech-dark px-6 py-3 rounded-lg font-bold">
+                    WE WILL BEAT ANY GENUINE QUOTE
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <a href="tel:07979537525" class="bg-protech-red hover:bg-red-700 text-white px-8 py-4 rounded-lg text-xl font-bold transition">
+                    <i class="fas fa-phone mr-2"></i>
+                    CALL NOW: 07979 537525
+                </a>
+                <a href="#quote" class="bg-white text-protech-dark hover:bg-gray-100 px-8 py-4 rounded-lg text-xl font-bold transition">
+                    GET FREE QUOTE
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Image Side -->
+                <div class="relative">
+                    <img src="./images/about.jpg" 
+                         alt="Protech Recovery Vehicle" 
+                         class="w-full h-96 object-cover rounded-lg shadow-lg">
+                    <div class="absolute inset-0 bg-gradient-to-t from-protech-dark/70 to-transparent rounded-lg"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Professional Recovery Services</h3>
+                        <p class="text-sm">Fully equipped vehicles for all recovery needs</p>
+                    </div>
+                </div>
+                
+                <!-- Content Side -->
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-protech-dark">
+                        ABOUT <span class="text-protech-red">PROTECH RECOVERY 24/7</span>
+                    </h2>
+                    <div class="space-y-4 text-gray-700 text-lg leading-relaxed mb-8">
+                        <p>
+                            <strong class="text-protech-red">Protech Recovery 24/7</strong> is West Yorkshire's most trusted vehicle recovery and transport specialist. With years of experience in the automotive industry, we've built our reputation on reliability, professionalism, and unbeatable customer service.
+                        </p>
+                        <p>
+                            Our team of certified professionals operates state-of-the-art recovery vehicles, ensuring your vehicle is handled with the utmost care. Whether you're stranded on the roadside or need specialized transport services, we're here to help 24 hours a day, 365 days a year.
+                        </p>
+                        <p>
+                            <strong>Why choose us?</strong> We're fully insured, competitively priced, and committed to beating any genuine quote. From emergency breakdowns to planned vehicle collections, we deliver exceptional service every time.
+                        </p>
+                    </div>
+                    
+                    <!-- Key Features -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt text-protech-red text-xl mr-3"></i>
+                            <span class="font-semibold">Fully Insured</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-protech-red text-xl mr-3"></i>
+                            <span class="font-semibold">24/7 Service</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-pound-sign text-protech-red text-xl mr-3"></i>
+                            <span class="font-semibold">Beat Any Quote</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marked-alt text-protech-red text-xl mr-3"></i>
+                            <span class="font-semibold">Nationwide Coverage</span>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Button -->
+                    <div class="text-center lg:text-left">
+                        <a href="tel:07979537525" class="bg-protech-red hover:bg-red-700 text-white px-8 py-4 rounded-lg text-xl font-bold transition inline-block">
+                            <i class="fas fa-phone mr-2"></i>
+                            CALL US NOW: 07979 537525
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-protech-dark">
+                OUR <span class="text-protech-red">SERVICES</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Service Cards with Images -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="./images/s1.jpg" 
+                         alt="Fuel Services" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-protech-dark">Fuel Services</h3>
+                        <p class="text-gray-600">Emergency fuel delivery and wrong fuel recovery services available 24/7.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="./images/s2.jpg" 
+                         alt="Jump Starts" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-protech-dark">Jump Starts</h3>
+                        <p class="text-gray-600">Quick battery jump start services to get you back on the road fast.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="./images/s3.jpg" 
+                         alt="Tyre Changes" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-protech-dark">Tyre Changes</h3>
+                        <p class="text-gray-600">Professional tyre changing services at your location.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="./images/s4.jpg" 
+                         alt="Mobile Mechanic" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-protech-dark">Mobile Mechanic</h3>
+                        <p class="text-gray-600">On-site mechanical repairs and diagnostics at your convenience.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="./images/s5.webp" 
+                         alt="National Deliveries" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-protech-dark">National Deliveries</h3>
+                        <p class="text-gray-600">Nationwide vehicle transport and delivery services.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="./images/s6.jpg" 
+                         alt="Auction Collections" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-protech-dark">Auction Collections</h3>
+                        <p class="text-gray-600">Professional vehicle collection from auction houses nationwide.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="./images/s7.jpg" 
+                         alt="Breakdown Recovery" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-protech-dark">Breakdown Recovery</h3>
+                        <p class="text-gray-600">24/7 breakdown recovery services across West Yorkshire and beyond.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="./images/s8.jpg" 
+                         alt="Dealership Transfers" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-protech-dark">Dealership Transfers</h3>
+                        <p class="text-gray-600">Professional vehicle transfers between dealerships.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="./images/s9.webp" 
+                         alt="European Deliveries" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-protech-dark">European Deliveries</h3>
+                        <p class="text-gray-600">Fully insured European vehicle collection and delivery services.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Services -->
+            <div class="bg-protech-dark text-white p-8 rounded-lg">
+                <h3 class="text-2xl font-bold mb-6 text-center">
+                    ADDITIONAL <span class="text-protech-red">SERVICES</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-lg font-bold mb-3 text-protech-red">Vehicle Collections From:</h4>
+                        <ul class="space-y-2">
+                            <li><i class="fas fa-check text-protech-red mr-2"></i>Private Collections</li>
+                            <li><i class="fas fa-check text-protech-red mr-2"></i>Auction Houses</li>
+                            <li><i class="fas fa-check text-protech-red mr-2"></i>Dealers</li>
+                            <li><i class="fas fa-check text-protech-red mr-2"></i>Transportation Services</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-3 text-protech-red">Insurance & Coverage:</h4>
+                        <ul class="space-y-2">
+                            <li><i class="fas fa-shield-alt text-protech-red mr-2"></i>Fully Insured Services</li>
+                            <li><i class="fas fa-shield-alt text-protech-red mr-2"></i>Goods in Transit Coverage</li>
+                            <li><i class="fas fa-shield-alt text-protech-red mr-2"></i>Public Liability Insurance</li>
+                            <li><i class="fas fa-shield-alt text-protech-red mr-2"></i>Professional Indemnity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Carousel Section -->
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-protech-dark">
+                WHAT OUR <span class="text-protech-red">CUSTOMERS SAY</span>
+            </h2>
+            
+            <div class="swiper testimonialSwiper max-w-4xl mx-auto">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="flex text-yellow-400 text-xl">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-lg text-gray-700 mb-6 italic">
+                                "Absolutely fantastic service! My car broke down at 2am and they were there within 30 minutes. Professional, friendly, and reasonably priced. Couldn't ask for better service."
+                            </p>
+                            <div class="flex items-center justify-center">
+                                <img src="/placeholder.svg?height=60&width=60" 
+                                     alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-protech-dark">Sarah Mitchell</h4>
+                                    <p class="text-sm text-gray-600">Leeds, West Yorkshire</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="flex text-yellow-400 text-xl">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-lg text-gray-700 mb-6 italic">
+                                "Used Protech Recovery for collecting a car from auction. They were punctual, careful with the vehicle, and the price was exactly as quoted. Will definitely use again!"
+                            </p>
+                            <div class="flex items-center justify-center">
+                                <img src="/placeholder.svg?height=60&width=60" 
+                                     alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-protech-dark">James Thompson</h4>
+                                    <p class="text-sm text-gray-600">Bradford, West Yorkshire</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="flex text-yellow-400 text-xl">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-lg text-gray-700 mb-6 italic">
+                                "Excellent mobile mechanic service. Fixed my car on-site and saved me the hassle of getting it towed. Very knowledgeable and honest about pricing. Highly recommended!"
+                            </p>
+                            <div class="flex items-center justify-center">
+                                <img src="/placeholder.svg?height=60&width=60" 
+                                     alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-protech-dark">Emma Wilson</h4>
+                                    <p class="text-sm text-gray-600">Wakefield, West Yorkshire</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 4 -->
+                    <div class="swiper-slide">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="flex text-yellow-400 text-xl">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-lg text-gray-700 mb-6 italic">
+                                "Needed a vehicle transported from London to Leeds. They beat three other quotes and delivered exactly when promised. Professional service from start to finish."
+                            </p>
+                            <div class="flex items-center justify-center">
+                                <img src="/placeholder.svg?height=60&width=60" 
+                                     alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-protech-dark">Michael Roberts</h4>
+                                    <p class="text-sm text-gray-600">Huddersfield, West Yorkshire</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 5 -->
+                    <div class="swiper-slide">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="flex text-yellow-400 text-xl">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-lg text-gray-700 mb-6 italic">
+                                "Fast, reliable, and affordable. Had a flat tire on the M62 and they were there in 20 minutes. Changed the tire quickly and got me back on my way. Top service!"
+                            </p>
+                            <div class="flex items-center justify-center">
+                                <img src="/placeholder.svg?height=60&width=60" 
+                                     alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-protech-dark">Lucy Davies</h4>
+                                    <p class="text-sm text-gray-600">Halifax, West Yorkshire</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="swiper-pagination mt-8"></div>
+                
+                <!-- Navigation buttons -->
+                <div class="swiper-button-next text-protech-red"></div>
+                <div class="swiper-button-prev text-protech-red"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section id="quote" class="py-16 bg-protech-dark text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-8">
+                    GET YOUR <span class="text-protech-red">FREE QUOTE</span>
+                </h2>
+                <p class="text-center mb-8 text-gray-300">
+                    Fill out the form below and we'll get back to you with a competitive quote. 
+                    Remember - we will beat any genuine quote!
+                </p>
+                
+                <form class="space-y-6" onsubmit="handleQuoteSubmit(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold mb-2" for="name">Full Name *</label>
+                            <input class="w-full px-3 py-2 text-protech-dark rounded focus:outline-none focus:ring-2 focus:ring-protech-red" 
+                                   id="name" name="name" type="text" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2" for="phone">Phone Number *</label>
+                            <input class="w-full px-3 py-2 text-protech-dark rounded focus:outline-none focus:ring-2 focus:ring-protech-red" 
+                                   id="phone" name="phone" type="tel" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-bold mb-2" for="email">Email Address</label>
+                        <input class="w-full px-3 py-2 text-protech-dark rounded focus:outline-none focus:ring-2 focus:ring-protech-red" 
+                               id="email" name="email" type="email">
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold mb-2" for="service">Service Required *</label>
+                            <select class="w-full px-3 py-2 text-protech-dark rounded focus:outline-none focus:ring-2 focus:ring-protech-red" 
+                                    id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="breakdown">Breakdown Recovery</option>
+                                <option value="fuel">Fuel Services</option>
+                                <option value="jumpstart">Jump Start</option>
+                                <option value="tyre">Tyre Change</option>
+                                <option value="mechanic">Mobile Mechanic</option>
+                                <option value="delivery">National Delivery</option>
+                                <option value="auction">Auction Collection</option>
+                                <option value="dealership">Dealership Transfer</option>
+                                <option value="european">European Delivery</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2" for="urgency">Urgency</label>
+                            <select class="w-full px-3 py-2 text-protech-dark rounded focus:outline-none focus:ring-2 focus:ring-protech-red" 
+                                    id="urgency" name="urgency">
+                                <option value="emergency">Emergency (ASAP)</option>
+                                <option value="today">Today</option>
+                                <option value="tomorrow">Tomorrow</option>
+                                <option value="week">This Week</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold mb-2" for="pickup">Pickup Location</label>
+                            <input class="w-full px-3 py-2 text-protech-dark rounded focus:outline-none focus:ring-2 focus:ring-protech-red" 
+                                   id="pickup" name="pickup" type="text" placeholder="City, Postcode">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2" for="destination">Destination</label>
+                            <input class="w-full px-3 py-2 text-protech-dark rounded focus:outline-none focus:ring-2 focus:ring-protech-red" 
+                                   id="destination" name="destination" type="text" placeholder="City, Postcode">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-bold mb-2" for="vehicle">Vehicle Details</label>
+                        <input class="w-full px-3 py-2 text-protech-dark rounded focus:outline-none focus:ring-2 focus:ring-protech-red" 
+                               id="vehicle" name="vehicle" type="text" placeholder="Make, Model, Year">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-bold mb-2" for="details">Additional Details</label>
+                        <textarea class="w-full px-3 py-2 text-protech-dark rounded focus:outline-none focus:ring-2 focus:ring-protech-red" 
+                                  id="details" name="details" rows="4" placeholder="Please provide any additional information about your requirements"></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="bg-protech-red hover:bg-red-700 text-white px-8 py-3 rounded-lg text-lg font-bold transition">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            GET MY FREE QUOTE
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-protech-dark">
+                CONTACT <span class="text-protech-red">US</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-protech-dark">Get In Touch</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="bg-protech-red text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-protech-dark">Phone</h4>
+                                <a href="tel:07979537525" class="text-protech-red hover:underline text-lg">07979 537525</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-protech-red text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-protech-dark">Email</h4>
+                                <a href="mailto:Protechtransport24hr@gmail.com" class="text-protech-red hover:underline">
+                                    Protechtransport24hr@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-protech-red text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-protech-dark">Service Area</h4>
+                                <p class="text-gray-600">West Yorkshire & Nationwide Coverage</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-protech-red text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-protech-dark">Operating Hours</h4>
+                                <p class="text-gray-600">24 Hours a Day, 7 Days a Week</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="mt-8">
+                        <h4 class="font-bold text-protech-dark mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-protech-red text-white p-3 rounded-full hover:bg-red-700 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-protech-red text-white p-3 rounded-full hover:bg-red-700 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-protech-red text-white p-3 rounded-full hover:bg-red-700 transition">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="#" class="bg-protech-red text-white p-3 rounded-full hover:bg-red-700 transition">
+                                <i class="fab fa-snapchat-ghost"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Emergency Contact -->
+                <div class="bg-protech-red text-white p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-6">EMERGENCY BREAKDOWN?</h3>
+                    <p class="text-lg mb-6">
+                        Don't wait - call us now for immediate assistance. Our team is standing by 24/7 
+                        to help you get back on the road quickly and safely.
+                    </p>
+                    <div class="text-center">
+                        <a href="tel:07979537525" class="bg-white text-protech-red px-8 py-4 rounded-lg text-2xl font-bold hover:bg-gray-100 transition inline-block">
+                            <i class="fas fa-phone mr-2"></i>
+                            CALL NOW: 07979 537525
+                        </a>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <p class="text-sm">
+                            <i class="fas fa-shield-alt mr-2"></i>
+                            Fully Insured • Licensed • Professional
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-protech-dark text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-protech-red">Protech Recovery 24/7</h3>
+                    <p class="text-gray-300 mb-4">
+                        Your trusted partner for vehicle recovery, breakdown assistance, and transport services 
+                        across West Yorkshire and beyond.
+                    </p>
+                    <p class="text-sm text-gray-400">
+                        Fully insured with goods in transit and public liability coverage.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-protech-red">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#services" class="hover:text-white transition">Our Services</a></li>
+                        <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#testimonials" class="hover:text-white transition">Testimonials</a></li>
+                        <li><a href="#quote" class="hover:text-white transition">Get Quote</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-protech-red">Emergency Contact</h4>
+                    <p class="text-gray-300 mb-2">24/7 Emergency Line:</p>
+                    <a href="tel:07979537525" class="text-2xl font-bold text-protech-red hover:text-red-400 transition">
+                        07979 537525
+                    </a>
+                    <p class="text-sm text-gray-400 mt-4">
+                        We will beat any genuine quote - call for assistance!
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    &copy; 2024 Protech Recovery 24/7. All rights reserved. | 
+                    <span class="text-protech-red">Cash is King - 20% VAT added on bank transfer</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Call Button -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <a href="tel:07979537525" class="bg-protech-red hover:bg-red-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition animate-pulse">
+            <i class="fas fa-phone text-2xl"></i>
+        </a>
+    </div>
+
+    <script>
+        // Sidebar functionality (mobile only)
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const closeSidebar = document.getElementById('closeSidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+        function openSidebar() {
+            sidebar.classList.remove('translate-x-full');
+            sidebarOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeSidebarMenu() {
+            sidebar.classList.add('translate-x-full');
+            sidebarOverlay.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', openSidebar);
+        }
+        if (closeSidebar) {
+            closeSidebar.addEventListener('click', closeSidebarMenu);
+        }
+        if (sidebarOverlay) {
+            sidebarOverlay.addEventListener('click', closeSidebarMenu);
+        }
+
+        // Close sidebar when clicking on links
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', closeSidebarMenu);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = window.innerWidth >= 1024 ? 120 : 80; // Account for desktop nav height
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize Swiper for testimonials
+        const swiper = new Swiper('.testimonialSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 1,
+                },
+                1024: {
+                    slidesPerView: 1,
+                }
+            }
+        });
+
+        // Quote form submission
+        function handleQuoteSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Create email body
+            const emailBody = `
+New Quote Request from ${data.name}
+
+Contact Information:
+- Name: ${data.name}
+- Phone: ${data.phone}
+- Email: ${data.email || 'Not provided'}
+
+Service Details:
+- Service Required: ${data.service}
+- Urgency: ${data.urgency}
+- Pickup Location: ${data.pickup || 'Not specified'}
+- Destination: ${data.destination || 'Not specified'}
+- Vehicle Details: ${data.vehicle || 'Not specified'}
+
+Additional Details:
+${data.details || 'None provided'}
+            `.trim();
+
+            // Create mailto link
+            const mailtoLink = `mailto:Protechtransport24hr@gmail.com?subject=Quote Request from ${data.name}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Thank you for your quote request! Your email client should open now. We will get back to you as soon as possible.');
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-xl');
+            } else {
+                header.classList.remove('shadow-xl');
+            }
+        });
+
+        // Close sidebar on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeSidebarMenu();
+            }
+        });
+    </script>
+</body>
+</html>
